@@ -59,25 +59,24 @@ public class Start {
 
         System.out.println("----------- Wydruk z tablicy ArrayList: ----------");
 
-        for (Object l: list) {
-            System.out.println(((Dog)l).name);
-            System.out.println(((Dog)l).move());
-
+        for (Object l : list) {
+            System.out.println(((Dog) l).name);
+            System.out.println(((Dog) l).move());
 
 
         }
 
         System.out.println("----------- Wydruk z Hash Mapy: ----------");
 
-        for (Object m : map.values()){
-            System.out.println(((Cat)m).name);
-            System.out.println(((Cat)m).move());
+        for (Object m : map.values()) {
+            System.out.println(((Cat) m).name);
+            System.out.println(((Cat) m).move());
         }
 
         System.out.println("----------- Wydruk z Hash Setu: ----------");
-        for (Object s : set){
-            System.out.println(((Plane)s).name);
-            System.out.println(((Plane)s).move());
+        for (Object s : set) {
+            System.out.println(((Plane) s).name);
+            System.out.println(((Plane) s).move());
 
         }
         // reverse order, LinkedHash - order from the beginning
