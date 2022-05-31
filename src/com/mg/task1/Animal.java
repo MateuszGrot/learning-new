@@ -1,12 +1,14 @@
 package com.mg.task1;
 
-abstract public class Animal {
+abstract public class Animal implements Movable{
 
-    protected String name;
+    private  String name;
 
     public Animal(String name) {
         this.name = name;
     }
+
+    public  String getName() {       return name;    }
 
 
 }

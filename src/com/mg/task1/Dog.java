@@ -1,6 +1,6 @@
 package com.mg.task1;
 
-public class Dog extends Animal implements Movable{
+public class Dog extends Animal {
 
     public Dog(String name) {
         super(name);

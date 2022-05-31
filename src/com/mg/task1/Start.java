@@ -1,85 +1,129 @@
 package com.mg.task1;
 
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 
 public class Start {
     public static void main(String[] args) {
 
-        ArrayList list = new ArrayList();
 
+
+        ArrayList<Animal> list = new ArrayList<>();
 
         System.out.println("----------Psy----------");
-        Dog dog1 = new Dog("Puszek");
-        System.out.println(dog1.name);
+        Animal dog1 = new Dog("Puszek");
+        System.out.println(dog1.getName());
         list.add(dog1);
 
-        Dog dog2 = new Dog("Mietek");
-        System.out.println(dog2.name);
+        Animal dog2 = new Dog("Mietek");
+        System.out.println(dog2.getName());
         list.add(dog2);
 
-        Dog dog3 = new Dog("Czesiek");
-        System.out.println(dog3.name);
+        Animal dog3 = new Dog("Czesiek");
+        System.out.println(dog3.getName());
         list.add(dog3);
 
         System.out.println("----------Koty----------");
 
-        HashMap<Integer, Object> map = new HashMap<>();
+        HashMap<Integer, Animal> map = new HashMap<>();
 
-        Cat cat1 = new Cat("Czarny");
-        System.out.println(cat1.name);
+        Animal cat1 = new Cat("Czarny");
+        System.out.println(cat1.getName());
         map.put(1, cat1);
 
-        Cat cat2 = new Cat("Rudy");
-        System.out.println(cat2.name);
+        Animal cat2 = new Cat("Rudy");
+        System.out.println(cat2.getName());
         map.put(2, cat2);
 
-        Cat cat3 = new Cat("Niebieski");
-        System.out.println(cat3.name);
+        Animal cat3 = new Cat("Niebieski");
+        System.out.println(cat3.getName());
         map.put(3, cat3);
 
         System.out.println("----------Samoloty----------");
 
-        HashSet<Object> set = new HashSet<>();
+        HashSet<Machine> set = new HashSet<>();
 
-        Plane plane1 = new Plane("Boeing");
-        System.out.println(plane1.name);
+        Machine plane1 = new Plane("Boeing");
+        System.out.println(plane1.getName());
         set.add(plane1);
 
-        Plane plane2 = new Plane("Concorde");
-        System.out.println(plane2.name);
+        Machine plane2 = new Plane("Concorde");
+        System.out.println(plane2.getName());
         set.add(plane2);
 
-        Plane plane3 = new Plane("Airbus");
-        System.out.println(plane3.name);
+        Machine plane3 = new Plane("Airbus");
+        System.out.println(plane3.getName());
         set.add(plane3);
 
         System.out.println("----------- Wydruk z tablicy ArrayList: ----------");
 
-        for (Object l : list) {
-            System.out.println(((Dog) l).name);
-            System.out.println(((Dog) l).move());
 
-
+        for (Animal animal : list) {
+            System.out.println(animal.getName());
+            System.out.println(animal.move());
+            
         }
+
+
 
         System.out.println("----------- Wydruk z Hash Mapy: ----------");
 
-        for (Object m : map.values()) {
-            System.out.println(((Cat) m).name);
-            System.out.println(((Cat) m).move());
+        for (Animal animal : map.values()) {
+            System.out.println(animal.getName());
+            System.out.println(animal.move());
         }
 
+
+
         System.out.println("----------- Wydruk z Hash Setu: ----------");
-        for (Object s : set) {
-            System.out.println(((Plane) s).name);
-            System.out.println(((Plane) s).move());
+        for (Machine machine : set) {
+            System.out.println(machine.getName());
+            System.out.println(machine.move());
 
         }
         // reverse order, LinkedHash - order from the beginning
+
+        System.out.println("----------- Lista movable: ----------");
+
+        LinkedList<Movable> elements = new LinkedList<Movable>();
+
+        Animal dog5 = new Dog("Pietruszek");
+        System.out.println(dog5.getName());
+        elements.add(dog5);
+
+        Animal cat5 = new Cat("Czerwony");
+        System.out.println(cat5.getName());
+        elements.add(dog5);
+
+        Machine plane5 = new Plane("F-16");
+        System.out.println(plane5.getName());
+        elements.add(plane5);
+
+        for (Movable e: elements) {
+            System.out.println(e.move());
+
+        }
+        System.out.println(elements.size());
+        System.out.println(elements.isEmpty());
+
+        elements.removeLast();
+
+
+
+        for (Movable e: elements) {
+            System.out.println(e.move());
+
+        }
+
+        elements.clear();
+
+        System.out.println("Wyczyszczona tablica");
+
+        for (Movable e: elements) {
+
+            System.out.println(e.move());
+
+        }
     }
 }
 
